@@ -1,101 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>CSS Template</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning DevOps</title>
+    <style>
+        /* Background with image and center alignment */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('https://example.com/background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+        }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+        /* Message box styling */
+        .message-box {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Transparent overlay */
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            font-size: 24px;
+        }
 
-/* Style the header */
-header {
-  background-color: #666;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
-  color: yellow;
-}
+        /* Heading style */
+        .message-box h1 {
+            margin: 0;
+            font-size: 40px;
+            color: #4CAF50; /* Accent color for "I am learning DevOps" */
+        }
 
-/* Create two columns/boxes that floats next to each other */
-nav {
-  float: left;
-  width: 30%;
-  height: 300px; /* only for demonstration, should be removed */
-  background: #ccc;
-  padding: 20px;
-}
-
-/* Style the list inside the menu */
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-article {
-  float: left;
-  padding: 20px;
-  width: 70%;
-  background-color: #f1f1f1;
-  height: 300px; /* only for demonstration, should be removed */
-}
-
-/* Clear floats after the columns */
-section::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Style the footer */
-footer {
-  background-color: #777;
-  padding: 10px;
-  text-align: center;
-  color: yellow;
-}
-
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-@media (max-width: 600px) {
-  nav, article {
-    width: 100%;
-    height: auto;
-  }
-}
-</style>
+        /* Restrict to desktop screens */
+        @media (max-width: 1024px) {
+            .message-box {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-
-
-<header>
-  <h2>Free DevOps Course By Abhishek</h2>
-</header>
-
-<section>
-  <nav>
-    <ul>
-      <li><a href="www.youtube.com/@AbhishekVeeramalla">YouTube</a></li>
-      <li><a href="www.linkedin.com/in/abhishek-veeramalla-77b33996/">LinkedIn</a></li>
-      <li><a href="https://telegram.me/abhishekveeramalla">Telegram</a></li>
-    </ul>
-  </nav>
-  
-  <article>
-    <h1>Agenda</h1>
-    <p>Learn DevOps with strong foundational knowledge and practical understanding</p>
-    <p>Please Share the Channel with your friends and colleagues</p>
-  </article>
-</section>
-
-<footer>
-  <p>@AbhishekVeeramalla</p>
-</footer>
-
+    <div class="message-box">
+        <h1>I am learning DevOps</h1>
+    </div>
 </body>
 </html>
-
