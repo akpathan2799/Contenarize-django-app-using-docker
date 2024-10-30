@@ -9,7 +9,7 @@ CMD ["manage.py","runserver","0.0.0.0:8000"]
 
 
 ######################################################
-  Using Multi Stage Build
+  #Using Multi Stage Build
 #$#W###################################################
 
 # FROM python AS builder
