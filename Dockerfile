@@ -16,7 +16,7 @@ FROM python AS builder
 WORKDIR /app
 COPY requirements.txt /app
 RUN pip install -r requirements.txt
-COPY . ./
+COPY . .
 
 
 FROM gcr.io/distroless/python3
