@@ -1,28 +1,30 @@
-######  Using Single Stage Build ##############
-FROM python
-WORKDIR /app
-COPY . .
+# ######  Using Single Stage Build ##############
+# FROM python
+# WORKDIR /app
+# COPY . .
 
-RUN pip install -r requirements.txt
-ENTRYPOINT ["python3"]
-CMD ["manage.py","runserver","0.0.0.0:8000"]
+# RUN pip install -r requirements.txt
+# ENTRYPOINT ["python3"]
+# CMD ["manage.py","runserver","0.0.0.0:8000"]
 
 
 ######################################################
   #Using Multi Stage Build
 #$#W###################################################
 
-# FROM python AS builder
-# WORKDIR /app
-# COPY requirements.txt /app
-# RUN pip install -r requirements.txt
-# COPY . .
+FROM python AS builder
+WORKDIR /app
+COPY requirements.txt /app
+RUN pip install -r requirements.txt
+COPY . .
 
+FROM python:3.9-slim
 
-# FROM gcr.io/distroless/python3
-# WORKDIR /app
-# COPY --from=builder /app /app
+WORKDIR /app
+COPY --from=backend-builder /usr/local/lib/python3.9/site-packages/ /usr/local/lib/python3.9/site-packages/
 
-# ENTRYPOINT ["python3"]
-# CMD ["manage.py","runserver","0.0.0.0:3000"]
+COPY --from=builder /app /app
+
+ENTRYPOINT ["python3"]
+CMD ["manage.py","runserver","0.0.0.0:3000"]
 
